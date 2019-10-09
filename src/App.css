@@ -20,3 +20,51 @@
 .App-link {
   color: #09d3ac;
 }
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+body {
+  line-height: 26px;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  color: #777777;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Heebo", sans-serif;
+  font-weight: bold;
+}
+
+h1 {
+  padding: 50px;
+}
+
+button {
+  margin: 10px;
+  -webkit-appearance: none;
+  border: none;
+  outline:none;
+}
+
+button:focus,
+button:hover {
+  border: none;
+  outline:none;
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.5em);
+}
