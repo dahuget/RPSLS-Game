@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, {
+  Component
+} from 'react'
 import Choices from './components/choices';
 import Results from './components/results';
 import './App.css';
@@ -18,11 +20,13 @@ class App extends Component {
   }
 
   updateResults(results) {
-    this.setState({results});
+    this.setState({
+      results
+    });
     if (results === "win") this.win()
-      else this.lose()
+    else this.lose()
   }
-  
+
   win() {
     this.setState({
       playerScore: this.state.playerScore + 1
@@ -36,35 +40,37 @@ class App extends Component {
 
   componentDidMount() {
     fetch('https://codechallenge.boohma.com/choices')
-    .then(res => res.json())
-    .then((data) => {
-      this.setState({ choices: data })
-      var buttons = document.querySelectorAll( "button" );
-      for ( var counter = 0; counter < buttons.length; counter++) {
-        buttons[counter].addEventListener("click", function(){
-          console.log(this.id)
-          fetch('https://codechallenge.boohma.com/play', {
-            method: 'POST',
-            headers: {
-              Accept: 'application/json',
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              player: parseInt(this.id),
-            }),
-          })
-          .then(res => res.json())
-          .then((data) => {
-            console.log(data)
-            var resultsStr = "You " + data.results +"!"
-            alert(resultsStr)
-            // this.setState({ results: data })
-          })
-          .catch(console.log);
-       });
-      }
-    })
-    .catch(console.log);
+      .then(res => res.json())
+      .then((data) => {
+        this.setState({
+          choices: data
+        })
+        var buttons = document.querySelectorAll("button");
+        for (var counter = 0; counter < buttons.length; counter++) {
+          buttons[counter].addEventListener("click", function () {
+            console.log(this.id)
+            fetch('https://codechallenge.boohma.com/play', {
+                method: 'POST',
+                headers: {
+                  Accept: 'application/json',
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                  player: parseInt(this.id),
+                }),
+              })
+              .then(res => res.json())
+              .then((data) => {
+                console.log(data)
+                var resultsStr = "You " + data.results + "!"
+                alert(resultsStr)
+                // this.setState({ results: data })
+              })
+              .catch(console.log);
+          });
+        }
+      })
+      .catch(console.log);
   }
 
   render() {

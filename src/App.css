@@ -58,13 +58,13 @@ button {
   margin: 10px;
   -webkit-appearance: none;
   border: none;
-  outline:none;
+  outline: none;
 }
 
 button:focus,
 button:hover {
   border: none;
-  outline:none;
+  outline: none;
   box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
   transform: translateY(-0.5em);
 }

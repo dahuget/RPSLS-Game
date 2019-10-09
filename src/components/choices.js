@@ -5,24 +5,26 @@ import scissors from '../img/scissors.png'
 import lizard from '../img/lizard.png'
 import spock from '../img/spock.png'
 
-const Choices = ({ choices }) => {
-  
-  function getImage(name) {
-    switch(name) {
-      case "rock":
-        return rock;
-      case "paper":
-        return paper;
-      case "scissors":
-        return scissors;
-      case "lizard":
-        return lizard;
-      case "spock":
-        return spock;  
-      default:
-        return ""
+const Choices = ({
+    choices
+  }) => {
+
+    function getImage(name) {
+      switch (name) {
+        case "rock":
+          return rock;
+        case "paper":
+          return paper;
+        case "scissors":
+          return scissors;
+        case "lizard":
+          return lizard;
+        case "spock":
+          return spock;
+        default:
+          return ""
+      }
     }
-  }
   
   return (
     <div>
